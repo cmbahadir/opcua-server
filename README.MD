@@ -43,7 +43,7 @@ After you are successfully connected with the AP you should run the "ServerConfi
 You can set the connection type as "Wi-Fi" or "Ethernet", currently static ip address is only supported for ethernet connection. After you are done with the changes click to download, after a successful download, download button will turn into green.
 
 <p align="center">
-  <img src="server_configurator_connected.png?raw=true" alt="Server Configurator Download"/>
+  <img src="doc/server_configurator_connected.png?raw=true" alt="Server Configurator Download"/>
 </p>
 
 ## License
