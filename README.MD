@@ -10,8 +10,8 @@ This is a more user friendly form of opc ua server based on the project https://
   <img src="doc/esp32_evb.png?raw=true" alt="ESP32-EVB" style="border-radius: 8px;"/>
 </p>
 
-- ESP-IDF : It is required to have esp-idf cloned with submodules.
-- Python : For server configurator with the packages in /ServerConfigurator/req.txt.
+- If you want to build and flash to the board then it is required to have esp-idf cloned with submodules to your local.
+- Python is required for "serverConfigurator" with the [packages](/ServerConfigurator/req.txt) installed.
 
 ## Getting Started
 A more detailed information can be found here: https://selftronics.com/2020/06/23/cheapest-embedded-opc-ua-server/
