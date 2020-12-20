@@ -16,7 +16,7 @@ This is a more user friendly form of opc ua server based on the project https://
 ## Getting Started
 A more detailed information can be found here: https://selftronics.com/2020/06/23/cheapest-embedded-opc-ua-server/
 
-ESP32:
+### Flashing firmware to ESP32:
 
     git clone --recursive https://github.com/espressif/esp-idf.git <your-esp-idf-root-path>
     export IDF_PATH=<your-esp-idf-root-path>
@@ -25,14 +25,14 @@ ESP32:
     git clone https://github.com/cmbahadir/opcua-server
     cd opcua-esp32
     idf.py build
-   
-ServerConfigrator (You can also do it inside a virtualenv):
+  
+After you flash the build to ESP32, it will be available as Wi-Fi AP with name "PROV_***". "***" depends on the MAC address of your board. It won't require any configuration to connect.
+
+### Provisioning with ServerConfigrator:
     
     cd ServerConfigurator
     pip install -r req.txt
     python ServerConfigurator.py
-   
-After you flash the build to ESP32, it will be available as Wi-Fi AP with name "PROV_*". "*" part depends on the MAC address of your board. It won't require any configuration to connect.
 
 After you are successfully connected with the AP you should run the "ServerConfigurator", set the Security to "AES-CTR" and enter the password as "abcd1234" (this can be changed statically).
 
@@ -40,7 +40,7 @@ After you are successfully connected with the AP you should run the "ServerConfi
   <img src="doc/server_configurator.png?raw=true" alt="Server Configurator" style="border-radius: 8px;"/>
 </p>
 
-You can set the connection type as "Wi-Fi" or "Ethernet", currently static ip address is only supported for ethernet connection. After you are done with the changes click to download, after a successful download, download button will turn into green.
+You can set the connection type as "Wi-Fi" or "Ethernet", settings a static ip address is only supported for ethernet connection for now, click download to set the configuration in the server. After a successful download, download button will turn into green and its text will change as "success".
 
 <p align="center">
   <img src="doc/server_configurator_connected.png?raw=true" alt="Server Configurator Download" style="border-radius: 8px;"/>
