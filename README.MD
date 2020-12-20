@@ -10,11 +10,11 @@ This is a more user friendly form of opc ua server based on the project https://
   <img src="doc/esp32_evb.png?raw=true" alt="ESP32-EVB" style="border-radius: 8px;"/>
 </p>
 
-- If you want to build and flash to the board then it is required to have esp-idf cloned with submodules to your local.
+- If you want to build and flash to the board then it is required to have esp-idf cloned in your local with submodules.
 - Python is required for "serverConfigurator" with the [packages](/ServerConfigurator/requirements.txt) installed.
 
 ## Usage
-A more detailed information can be found here: https://selftronics.com/2020/06/23/cheapest-embedded-opc-ua-server/
+Blog post about general usage: https://selftronics.com/2020/12/20/small-simple-but-efficient-open-source-opc-ua-server/
 
 ### Flashing firmware to ESP32:
 Released packages contain firmware binaries to be flashed. You can directly download and flash to your development board, unfortunately flasher tool of Espressif systems only supports Windows. You can download the flasher tool from Espressif's tools page here;
