@@ -1,4 +1,4 @@
-# Simple but Efficiant OPC UA Server
+# Simple but efficient OPC UA Server
 
 This is a more user friendly form of opc ua server based on the project https://github.com/cmbahadir/opcua-esp32. It consist of a configurator tool called ServerConfigurator and firmware running on ESP32.
 
@@ -36,8 +36,9 @@ After you flash the build to ESP32, it will be available as Wi-Fi AP with name "
 
 When you are successfully connected with the AP you should run the "ServerConfigurator", set the Security to "AES-CTR" and enter the password as "abcd1234" (this can be changed statically).
 
-![Alt text](doc/server_configurator.png?raw=true)
-
+<p align="center">
+  <img src="doc/server_configurator.png?raw=true" alt="Server Configurator"/>
+</p>
 
 ## License
 
