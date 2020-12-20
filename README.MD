@@ -5,6 +5,9 @@ This is a more user friendly form of opc ua server based on the project https://
 ### Prerequisites
 
 - Hardware : Development is based on [ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) but any ESP32 board consisting ethernet is expected to work. ESP32-EVB has also nice looking enclosure. 
+
+![Alt text](doc/esp32_evb.png?raw=true)
+
 - ESP-IDF : It is required to have esp-idf cloned with submodules.
 - Python : For server configurator with the packages in /ServerConfigurator/req.txt.
 
@@ -29,9 +32,9 @@ ServerConfigrator (You can also do it inside a virtualenv):
    
 After you flash the build to ESP32, it will be available as Wi-Fi AP with name "PROV_*". "*" part depends on the MAC address of your board. It won't require any configuration to connect.
 
-When you are successfully connected with the AP you should run the "ServerConfigurator" and set the Security to "AES-CTR" and enter the password as "abcd1234" (this can be changed statically).
+When you are successfully connected with the AP you should run the "ServerConfigurator", set the Security to "AES-CTR" and enter the password as "abcd1234" (this can be changed statically).
 
-[Server-Configurator-Image]
+![Alt text](server_configurator.png?raw=true)
 
 
 ## License
