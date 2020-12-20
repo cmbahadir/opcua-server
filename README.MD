@@ -1,40 +1,43 @@
-# OPC UA Server on ESP32
-[![Build Status](https://travis-ci.org/cmbahadir/opcua-esp32.svg?branch=master)](https://travis-ci.org/cmbahadir/opcua-esp32)
+# Simple but Efficiant OPC UA Server
 
-It is aimed to run OPC UA server on ESP32 board (xtensa toolchain). The information model is handled under models.c/h file. It contains a temperature sensor(DHT22) read port 4, a callback method to call ESP32-WROOM on board LED and 2 relays, which can be controlled as OPCUA objects.
-
-    On Board LED : GPIO 2
-    DHT22 Sensor : GPIO 4
-    RELAY 0      : GPIO 32
-    RELAY 1      : GPIO 33
-
-It is tested by UAExpert and also Matrikon Mobile IOS OPC UA Client. So if you face any problems with other clients please let me know.
+This is a more user friendly form of opc ua server based on the project https://github.com/cmbahadir/opcua-esp32. It consist of a configurator tool called ServerConfigurator and firmware running on ESP32.
 
 ### Prerequisites
 
-- ESP-IDF : https://docs.espressif.com/projects/esp-idf/en/latest/get-started/
-- Open62541 (Optional) : https://github.com/open62541/open62541
+- Hardware : Development is based on [ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) but any ESP32 board consisting ethernet is expected to work. ESP32-EVB has also nice looking enclosure. 
+- ESP-IDF : It is required to have esp-idf cloned with submodules.
+- Python : For server configurator with the packages in /ServerConfigurator/req.txt.
 
 ## Getting Started
 A more detailed information can be found here: https://selftronics.com/2020/06/23/cheapest-embedded-opc-ua-server/
 
-It is required to have locally configured ESP-IDF (https://github.com/espressif/esp-idf).
+ESP32:
 
     git clone --recursive https://github.com/espressif/esp-idf.git <your-esp-idf-root-path>
     export IDF_PATH=<your-esp-idf-root-path>
     export PATH=$PATH:<xtensa-toolchain-path>
     cd <your-esp-idf-root-path>/examples/
-    git clone https://github.com/cmbahadir opcua-esp32
+    git clone https://github.com/cmbahadir/opcua-server
     cd opcua-esp32
     idf.py build
+   
+ServerConfigrator (You can also do it inside a virtualenv):
     
-Open62541 stack functionaliy is provided by open62541.c and open62541.h files. If you want to dive into OPC UA part, it is advised to check Open62541 project.
+    cd ServerConfigurator
+    pip install -r req.txt
+    python ServerConfigurator.py
+   
+After you flash the build to ESP32, it will be available as Wi-Fi AP with name "PROV_*". "*" part depends on the MAC address of your board. It won't require any configuration to connect.
 
-Also, if you want to build open62541.c/.h/.lib from source, note the changes on https://github.com/cmbahadir/opcua-esp32/blob/master/components/open62541lib/README.md in order to be xtensa-toolchain compatible.
+When you are successfully connected with the AP you should run the "ServerConfigurator" and set the Security to "AES-CTR" and enter the password as "abcd1234" (this can be changed statically).
 
-- I haven't analyzed the required modifications on open62541.c/.h  files, these are just a result of trial and error process, so an explanatory contribution would be great. :)
+[Server-Configurator-Image]
 
 
 ## License
 
 This project is licensed under the Mozilla Public License Version 2.0 which is inherited from Open62541 project - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Caution
+
+It is the users responsibility to use in production, it is not suggested to use for critical applications. Only suggested for PoC's and diy projects.
