@@ -1,4 +1,4 @@
-# Simple but efficient OPC UA Server
+# A small OPC UA Server
 
 This is a more user friendly form of opc ua server based on the project https://github.com/cmbahadir/opcua-esp32. It consist of a configurator tool called ServerConfigurator and firmware running on ESP32.
 
