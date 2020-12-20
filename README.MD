@@ -7,7 +7,7 @@ This is a more user friendly form of opc ua server based on the project https://
 - Hardware : Development is based on [ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) but any ESP32 board consisting ethernet is expected to work. ESP32-EVB has also nice looking enclosure. 
 
 <p align="center">
-  <img src="doc/esp32_evb.png?raw=true" alt="ESP32-EVB"/>
+  <img src="doc/esp32_evb.png?raw=true" alt="ESP32-EVB" style="border-radius: 8px;"/>
 </p>
 
 - ESP-IDF : It is required to have esp-idf cloned with submodules.
@@ -34,10 +34,16 @@ ServerConfigrator (You can also do it inside a virtualenv):
    
 After you flash the build to ESP32, it will be available as Wi-Fi AP with name "PROV_*". "*" part depends on the MAC address of your board. It won't require any configuration to connect.
 
-When you are successfully connected with the AP you should run the "ServerConfigurator", set the Security to "AES-CTR" and enter the password as "abcd1234" (this can be changed statically).
+After you are successfully connected with the AP you should run the "ServerConfigurator", set the Security to "AES-CTR" and enter the password as "abcd1234" (this can be changed statically).
 
 <p align="center">
   <img src="doc/server_configurator.png?raw=true" alt="Server Configurator"/>
+</p>
+
+You can set the connection type as "Wi-Fi" or "Ethernet", currently static ip address is only supported for ethernet connection. After you are done with the changes click to download, after a successful download, download button will turn into green.
+
+<p align="center">
+  <img src="server_configurator_connected.png?raw=true" alt="Server Configurator Download"/>
 </p>
 
 ## License
@@ -46,4 +52,4 @@ This project is licensed under the Mozilla Public License Version 2.0 which is i
 
 ## Caution
 
-It is the users responsibility to use in production, it is not suggested to use for critical applications. Only suggested for PoC's and diy projects.
+It is the users responsibility to use this project in production, it is not suggested to use for critical applications. Only suggested for PoC's and diy projects.
