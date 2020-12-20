@@ -37,13 +37,13 @@ After you flash the build to ESP32, it will be available as Wi-Fi AP with name "
 After you are successfully connected with the AP you should run the "ServerConfigurator", set the Security to "AES-CTR" and enter the password as "abcd1234" (this can be changed statically).
 
 <p align="center">
-  <img src="doc/server_configurator.png?raw=true" alt="Server Configurator"/>
+  <img src="doc/server_configurator.png?raw=true" alt="Server Configurator" style="border-radius: 8px;"/>
 </p>
 
 You can set the connection type as "Wi-Fi" or "Ethernet", currently static ip address is only supported for ethernet connection. After you are done with the changes click to download, after a successful download, download button will turn into green.
 
 <p align="center">
-  <img src="doc/server_configurator_connected.png?raw=true" alt="Server Configurator Download"/>
+  <img src="doc/server_configurator_connected.png?raw=true" alt="Server Configurator Download" style="border-radius: 8px;"/>
 </p>
 
 ## License
